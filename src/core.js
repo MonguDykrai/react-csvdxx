@@ -3,7 +3,11 @@ import JsxParser from 'react-jsx-parser';
 // import Library from 'some-library-of-components'
 import ReactDOM from 'react-dom';
 import antd from 'antd';
-import { Table, message, Button } from 'antd';
+import {
+  Table,
+  // message,
+  // Button
+} from 'antd';
 import 'antd/dist/antd.css';
 
 const InjectableComponent = () => {
@@ -19,51 +23,54 @@ const InjectableComponent = () => {
 
 const MyComponent = ({ response }) => {
   const { columns, dataSource, jsx } = response;
-  console.log(jsx);
+  // console.log(jsx);
   // console.log(columns);
   return (
-    <JsxParser
-      // bindings={{
-      //   foo: 'bar',
-      //   myEventHandler: () => {
-      //     /* ... do stuff ... */
-      //   },
-      // }}
-      bindings={{
-        // columns,
-        columns: eval(columns),
-        dataSource,
-      }}
-      // bindings={{
-      //   columns: [
-      //     ...columns,
-      //     // {
-      //     //   ...columns[3],
-      //     //   render: eval(`(value, record) => {
-      //     //     return (
-      //     //       <>
-      //     //         <a onClick={() => message.info('删除')}>删除</a>
-      //     //       </>
-      //     //     );
-      //     //   }`),
-      //     // },
-      //   ],
-      //   dataSource,
-      // }}
-      // components={{ InjectableComponent, ...antd }}
-      components={{ InjectableComponent, Table, Button }}
-      // components={{ InjectableComponent, Library }}
-      // jsx={`
-      //   <h1>Header</h1>
-      //   <InjectableComponent eventHandler={myEventHandler} truthyProp />
-      //   <Library.SomeComponent someProp={foo} calc={1 + 1} stringProp="foo" />
-      //   <Library.DataFetcher>((data) => <div>{data.name}</div>)</Library.DataFetcher>
-      // `}
-      // jsx={`
-      //   <Table columns={[ { name: '姓名', dataIndex: 'name' } ]} dataSource={[{ name: 'zs' }]} />
-      // `}
-      jsx={jsx}
-    />
+    <>
+      <JsxParser
+        // bindings={{
+        //   foo: 'bar',
+        //   myEventHandler: () => {
+        //     /* ... do stuff ... */
+        //   },
+        // }}
+        bindings={{
+          columns,
+          // columns: eval(columns),
+          dataSource,
+        }}
+        // bindings={{
+        //   columns: [
+        //     ...columns,
+        //     // {
+        //     //   ...columns[3],
+        //     //   render: eval(`(value, record) => {
+        //     //     return (
+        //     //       <>
+        //     //         <a onClick={() => message.info('删除')}>删除</a>
+        //     //       </>
+        //     //     );
+        //     //   }`),
+        //     // },
+        //   ],
+        //   dataSource,
+        // }}
+        // components={{ InjectableComponent, ...antd }}
+        // components={{ InjectableComponent, Table, Button }}
+        components={{ InjectableComponent, Table }}
+        // components={{ InjectableComponent, Library }}
+        // jsx={`
+        //   <h1>Header</h1>
+        //   <InjectableComponent eventHandler={myEventHandler} truthyProp />
+        //   <Library.SomeComponent someProp={foo} calc={1 + 1} stringProp="foo" />
+        //   <Library.DataFetcher>((data) => <div>{data.name}</div>)</Library.DataFetcher>
+        // `}
+        // jsx={`
+        //   <Table columns={[ { name: '姓名', dataIndex: 'name' } ]} dataSource={[{ name: 'zs' }]} />
+        // `}
+        jsx={jsx}
+      />
+    </>
   );
 };
 
