@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import antd from 'antd';
 import {
   Table,
-  // message,
+  message,
   // Button
 } from 'antd';
 import 'antd/dist/antd.css';
@@ -25,6 +25,7 @@ const MyComponent = ({ response }) => {
   const { columns, dataSource, jsx } = response;
   // console.log(jsx);
   // console.log(columns);
+  const onClick = () => message.info('hello');
   return (
     <>
       <JsxParser
@@ -38,6 +39,7 @@ const MyComponent = ({ response }) => {
           columns,
           // columns: eval(columns),
           dataSource,
+          onClick: () => message.info('hello world'),
         }}
         // bindings={{
         //   columns: [

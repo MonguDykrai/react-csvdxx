@@ -26,6 +26,7 @@ const response = {
   jsx: `
     <Table rowKey='id' columns={columns} dataSource={dataSource} />
   `,
+  // jsx: `<button onClick={onClick}>hello world</button>`,
 };
 
 console.log(`${response.columns[3].render}`);
