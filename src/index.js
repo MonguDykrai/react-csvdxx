@@ -34,6 +34,14 @@ ReactDOM.render(
   <>
     <div dangerouslySetInnerHTML={{ __html: response }}></div>
     <MyComponent response={response} />
+    {/* <pre>{response}</pre> */}
+    <code>{`(value, record) => {
+        return (
+          <>
+            <Button onClick={() => message.info('删除')}>删除</Button>
+          </>
+        );
+      }`}</code>
   </>,
   document.body
 );
