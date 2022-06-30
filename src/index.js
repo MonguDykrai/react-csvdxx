@@ -30,4 +30,10 @@ const response = {
 
 console.log(`${response.columns[3].render}`);
 
-ReactDOM.render(<MyComponent response={response} />, document.body);
+ReactDOM.render(
+  <>
+    <div dangerouslySetInnerHTML={{ __html: response }}></div>
+    <MyComponent response={response} />
+  </>,
+  document.body
+);
