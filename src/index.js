@@ -31,6 +31,8 @@ const response = {
 
 console.log(`${response.columns[3].render}`);
 
+console.log(response.columns[3].render.toString());
+
 ReactDOM.render(
   <>
     <div dangerouslySetInnerHTML={{ __html: response }}></div>
